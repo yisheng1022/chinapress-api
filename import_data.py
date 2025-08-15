@@ -5,7 +5,7 @@ from db import db  # 來自 db.py
 
 # 定義資料來源：CSV 檔案路徑 ➜ Collection 名稱
 data_sources = {
-    "JFJB_daily_articles": "data/people_daily.csv",
+    "JFJB_daily_articles": "data/JFJB_combine.csv",
     "GMB_daily_articles": "data/xinhua_news.csv"
 }
 
