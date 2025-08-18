@@ -14,8 +14,8 @@ for collection_name, filepath in data_sources.items():
     print(f"\n📥 正在匯入：{filepath} 到 collection：{collection_name}")
 
     # 讀取 CSV
-    df = pd.read_csv(filepath)
-
+    df = pd.read_csv(filepath,dtype='str')
+    df["Date"] = pd.to_datetime(df["Date"], format="%Y/%m/%d")
     # 轉換為 list of dicts
     docs = df.to_dict(orient="records")
 
