@@ -31,7 +31,7 @@ def search_articles(
 
     search_query = {}
     # 轉換日期
-    if start_date & end_date:
+    if start_date and end_date:
         try:
             start_date = datetime.strptime(start_date, "%Y-%m-%d")
             end_date = datetime.strptime(end_date, "%Y-%m-%d")
