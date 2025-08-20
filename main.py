@@ -1,6 +1,7 @@
 # from operator import le
 from fastapi import FastAPI, Query
 from fastapi.encoders import jsonable_encoder
+from fastapi.middleware.cors import CORSMiddleware
 # from fastapi.responses import JSONResponse
 from typing import Optional
 from db import db
@@ -9,6 +10,16 @@ import math
 from typing import Optional
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://yisheng1022.github.io",       #  GitHub Pages 根網域
+    ],
+    allow_credentials=False,  #目前不設登入機制
+    allow_methods=["GET", "OPTIONS"],
+    allow_headers=["*"],
+)
 
 # 所有 Collection 名稱（可擴充）
 VALID_COLLECTIONS = {
